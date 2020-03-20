@@ -15,9 +15,29 @@ struct Triangles {
         1, -1, 0
     ]
     
-    func createBuffer(device: MTLDevice) -> MTLBuffer? {
-        return device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout<Float>.size, options: [])
+    var indicies: [UInt16] = [
+        0, 1, 2,
+        2, 3, 0
+    ]
+    
+    func createVBuffer(device: MTLDevice) -> MTLBuffer? {
+        return device.makeBuffer(
+            bytes: vertices,
+            length: vertices.count * MemoryLayout<Float>.size,
+            options: []
+        )
     }
+    
+    func createIBuffer(device: MTLDevice) -> MTLBuffer? {
+        return device.makeBuffer(
+            bytes: indicies, length: indicies.count * MemoryLayout<UInt16>.size,
+            options: []
+        )
+    }
+}
+
+struct Constants {
+    var xOffset: Float = 0.0
 }
 
 class Renderer: NSObject {
@@ -26,24 +46,25 @@ class Renderer: NSObject {
     
     var pipelineState: MTLRenderPipelineState?
     var vertexBuffer: MTLBuffer?
+    var indexBuffer: MTLBuffer?
     
     // to move
     let triangles = Triangles(vertices: [
         -1, 1, 0,
         -1, -1, 0,
         1, -1, 0,
-        -1, 1, 0,
-        1, 1, 0,
-        1, -1, 0
+        1, 1, 0
     ])
     
-    var trianglesBuffer: MTLBuffer?
+    var constant = Constants()
+    var time: Float = 0
     
     init(device: MTLDevice) {
         self.device = device
         self.commandQueue = device.makeCommandQueue()!
         super.init()
-        self.trianglesBuffer = triangles.createBuffer(device: device)
+        self.vertexBuffer = triangles.createVBuffer(device: device)
+        self.indexBuffer = triangles.createIBuffer(device: device)
         try? buildPipelineState()
     }
     
@@ -69,19 +90,28 @@ extension Renderer: MTKViewDelegate {
     public func draw(in view: MTKView) {
         guard let currentDrawable = view.currentDrawable,
             let pipelineState = pipelineState,
+            let indexBuffer = indexBuffer,
             let descriptor = view.currentRenderPassDescriptor else { return }
+        
+        time += 1 / Float(view.preferredFramesPerSecond)
+        
+        let animatedX = abs(sin(time)/2 + 0.5)
+        constant.xOffset = animatedX
         
         let commandBuffer = commandQueue.makeCommandBuffer()!
         
         let commandEncoder: MTLRenderCommandEncoder? = commandBuffer.makeRenderCommandEncoder(descriptor: descriptor)
         commandEncoder?.setRenderPipelineState(pipelineState)
         
+        commandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        commandEncoder?.setVertexBytes(&constant, length: MemoryLayout<Constants>.stride, index: 1)
         
-        commandEncoder?.setVertexBuffer(trianglesBuffer, offset: 0, index: 0)
-        commandEncoder?.drawPrimitives(
+        commandEncoder?.drawIndexedPrimitives(
             type: .triangle,
-            vertexStart: 0,
-            vertexCount: trianglesBuffer!.length/MemoryLayout<Float>.size/3
+            indexCount: triangles.indicies.count,
+            indexType: .uint16,
+            indexBuffer: indexBuffer,
+            indexBufferOffset: 0
         )
         
         commandEncoder?.endEncoding()
