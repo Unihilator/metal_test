@@ -8,6 +8,8 @@
 
 import MetalKit
 
+// Include header shared between this Metal shader code and C code executing Metal API commands.
+
 struct Triangles {
     var vertices: [Float] = [
         0, 1, 0,

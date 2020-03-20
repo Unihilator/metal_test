@@ -6,6 +6,9 @@ struct Constants {
 };
 
 /// device means GPU space variable
+/// https://developer.apple.com/library/archive/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html#//apple_ref/doc/uid/TP40014221-CH7-SW10
+
+
 vertex float4 vertex_shader(const device packed_float3 *verticies [[buffer(0)]],
                             constant Constants &constants [[buffer(1)]],
                             uint vertexId [[vertex_id]]) {
