@@ -13,6 +13,8 @@
 		CF22DEDE242355150042F9B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF22DEDC242355150042F9B7 /* Main.storyboard */; };
 		CF22DEE0242355160042F9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF22DEDF242355160042F9B7 /* Assets.xcassets */; };
 		CF22DEE3242355160042F9B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF22DEE1242355160042F9B7 /* LaunchScreen.storyboard */; };
+		CF22DEEB242365330042F9B7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEEA242365330042F9B7 /* Shaders.metal */; };
+		CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEEF242372FB0042F9B7 /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CF22DEDF242355160042F9B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF22DEE2242355160042F9B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF22DEE4242355160042F9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF22DEEA242365330042F9B7 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		CF22DEEF242372FB0042F9B7 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		CF22DED5242355150042F9B7 /* metal_test */ = {
 			isa = PBXGroup;
 			children = (
+				CF22DEEC242372180042F9B7 /* Graphics */,
 				CF22DED6242355150042F9B7 /* AppDelegate.swift */,
 				CF22DED8242355150042F9B7 /* SceneDelegate.swift */,
 				CF22DEDA242355150042F9B7 /* ViewController.swift */,
@@ -63,8 +68,33 @@
 				CF22DEDF242355160042F9B7 /* Assets.xcassets */,
 				CF22DEE1242355160042F9B7 /* LaunchScreen.storyboard */,
 				CF22DEE4242355160042F9B7 /* Info.plist */,
+				CF22DEEA242365330042F9B7 /* Shaders.metal */,
 			);
 			path = metal_test;
+			sourceTree = "<group>";
+		};
+		CF22DEEC242372180042F9B7 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				CF22DEED242372210042F9B7 /* Metal */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		CF22DEED242372210042F9B7 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				CF22DEEE2423722A0042F9B7 /* Renderer */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		CF22DEEE2423722A0042F9B7 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				CF22DEEF242372FB0042F9B7 /* Renderer.swift */,
+			);
+			path = Renderer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +171,8 @@
 				CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */,
 				CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */,
 				CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */,
+				CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */,
+				CF22DEEB242365330042F9B7 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

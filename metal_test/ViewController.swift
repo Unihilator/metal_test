@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import MetalKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+class MyMetalView: MTKView {
+    
 }
 
+class ViewController: UIViewController {
+    lazy var metalView = MyMetalView(frame: self.view.bounds)
+    lazy var device = MTLCreateSystemDefaultDevice()
+    
+    var renderer: Renderer!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(metalView)
+        renderer = Renderer(device: device!)
+        metalView.device = device
+        metalView.delegate = renderer
+        metalView.clearColor = .init(red: 0, green: 0.5, blue: 0.5, alpha: 1)
+    }
+}
