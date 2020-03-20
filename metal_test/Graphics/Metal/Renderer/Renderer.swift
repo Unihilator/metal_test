@@ -8,17 +8,15 @@
 
 import MetalKit
 
-struct Triangle {
+struct Triangles {
     var vertices: [Float] = [
         0, 1, 0,
         -1, -1, 0,
         1, -1, 0
     ]
     
-    static func createBuffer(device: MTLDevice, triangles: [Triangle]) -> MTLBuffer? {
-        let verticies = triangles.flatMap{$0.vertices}
-        
-        return device.makeBuffer(bytes: verticies, length: verticies.count * MemoryLayout<Float>.size, options: [])
+    func createBuffer(device: MTLDevice) -> MTLBuffer? {
+        return device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout<Float>.size, options: [])
     }
 }
 
@@ -30,12 +28,10 @@ class Renderer: NSObject {
     var vertexBuffer: MTLBuffer?
     
     // to move
-    var triangle1 = Triangle(vertices: [
+    let triangles = Triangles(vertices: [
         -1, 1, 0,
         -1, -1, 0,
-        1, -1, 0
-    ])
-    var triangle2 = Triangle(vertices: [
+        1, -1, 0,
         -1, 1, 0,
         1, 1, 0,
         1, -1, 0
@@ -47,7 +43,7 @@ class Renderer: NSObject {
         self.device = device
         self.commandQueue = device.makeCommandQueue()!
         super.init()
-        self.trianglesBuffer = Triangle.createBuffer(device: device, triangles: [triangle1, triangle2])
+        self.trianglesBuffer = triangles.createBuffer(device: device)
         try? buildPipelineState()
     }
     
