@@ -5,11 +5,11 @@ class Plane: Node {
     var vertexBuffer: MTLBuffer?
     var indexBuffer: MTLBuffer?
     
-    var vertices: [Float] = [
-        -1, 1, 0,
-        -1, -1, 0,
-        1, -1, 0,
-        1, 1, 0
+    var vertices: [Vertex] = [
+        Vertex(position: vector_float3(-1, 1, 0), color: vector_float4(1, 0, 0, 1)),
+        Vertex(position: vector_float3(-1, -1, 0), color: vector_float4(0, 1, 0, 1)),
+        Vertex(position: vector_float3(1, -1, 0), color: vector_float4(0, 0, 1, 1)),
+        Vertex(position: vector_float3(1, 1, 0), color: vector_float4(1, 0, 1, 1)),
     ]
     
     var indices: [UInt16] = [
@@ -27,7 +27,7 @@ class Plane: Node {
     
     private func buildBuffers(device: MTLDevice) {
         vertexBuffer = device.makeBuffer(
-            bytes: vertices, length: vertices.count * MemoryLayout<Float>.size, options: []
+            bytes: vertices, length: vertices.count * MemoryLayout<Vertex>.stride, options: []
         )
         indexBuffer = device.makeBuffer(
             bytes: indices, length: indices.count * MemoryLayout<UInt16>.size, options: []

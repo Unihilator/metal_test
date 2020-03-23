@@ -23,6 +23,11 @@ struct Constants {
     float xOffset;
 };
 
+typedef struct
+{
+    vector_float3 position;
+    vector_float4 color;
+} Vertex;
 
 
 #endif /* SharedTypes_h */

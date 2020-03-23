@@ -1,5 +1,4 @@
 #include <metal_stdlib>
-//#include "/Users/roman_derkach/projects/test/metal_test/metal_test/Graphics/Metal/Renderer/SharedTypes.h"
 
 using namespace metal;
 
@@ -8,15 +7,24 @@ using namespace metal;
 /// device means GPU space variable
 /// https://developer.apple.com/library/archive/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html#//apple_ref/doc/uid/TP40014221-CH7-SW10
 
+struct VertexIn {
+    float4 position [[attribute(0)]];
+    float4 color [[attribute(1)]];
+};
 
-vertex float4 vertex_shader(const device packed_float3 *verticies [[buffer(AAPLVertexInputIndexVertices)]],
-                            constant Constants &constants [[buffer(AAPLVertexInputIndexOffsetConstraint)]],
-                            uint vertexId [[vertex_id]]) {
-    float4 position = float4(verticies[vertexId], 1);
-    position.x += constants.xOffset;
-    return position;
+struct VertexOut {
+    float4 position [[position]];
+    float4 color;
+};
+
+vertex VertexOut vertex_shader(const VertexIn vertexIn [[stage_in]]) {
+    VertexOut vertexOut;
+    vertexOut.position = vertexIn.position;
+    vertexOut.color = vertexIn.color;
+    
+    return vertexOut;
 }
 
-fragment half4 fragment_shader() {
-    return half4(0, 0.4, 0.5, 1);
+fragment half4 fragment_shader(VertexOut vertexIn [[stage_in]]) {
+    return half4(vertexIn.color);
 }
