@@ -34,10 +34,6 @@ struct Triangles {
     }
 }
 
-struct Constants {
-    var xOffset: Float = 0.0
-}
-
 class Renderer: NSObject {
     private let device: MTLDevice
     let commandQueue: MTLCommandQueue

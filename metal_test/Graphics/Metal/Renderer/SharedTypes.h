@@ -15,9 +15,13 @@
 typedef enum AAPLVertexInputIndex
 {
     AAPLVertexInputIndexVertices     = 0,
-    AAPLVertexInputIndexViewportSize = 1,
+    AAPLVertexInputIndexOffsetConstraint = 1,
 } AAPLVertexInputIndex;
 
+
+struct Constants {
+    float xOffset;
+};
 
 
 
