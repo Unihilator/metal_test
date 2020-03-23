@@ -15,6 +15,9 @@
 		CF22DEE3242355160042F9B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF22DEE1242355160042F9B7 /* LaunchScreen.storyboard */; };
 		CF22DEEB242365330042F9B7 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEEA242365330042F9B7 /* Shaders.metal */; };
 		CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEEF242372FB0042F9B7 /* Renderer.swift */; };
+		CF70694224290E7400CF8A48 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF70694124290E7400CF8A48 /* Node.swift */; };
+		CF7069442429102300CF8A48 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7069432429102300CF8A48 /* Plane.swift */; };
+		CF7069462429154000CF8A48 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7069452429154000CF8A48 /* Scene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		CF22DEEF242372FB0042F9B7 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CF6EACD22424B6D100D9E8B5 /* SharedTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedTypes.h; sourceTree = "<group>"; };
 		CF6EACD42424BAA200D9E8B5 /* metal_test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "metal_test-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF70694124290E7400CF8A48 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		CF7069432429102300CF8A48 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		CF7069452429154000CF8A48 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 		CF22DEED242372210042F9B7 /* Metal */ = {
 			isa = PBXGroup;
 			children = (
+				CF70694024290E5E00CF8A48 /* engine */,
 				CF22DEEE2423722A0042F9B7 /* Renderer */,
 			);
 			path = Metal;
@@ -99,6 +106,16 @@
 				CF6EACD42424BAA200D9E8B5 /* metal_test-Bridging-Header.h */,
 			);
 			path = Renderer;
+			sourceTree = "<group>";
+		};
+		CF70694024290E5E00CF8A48 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				CF70694124290E7400CF8A48 /* Node.swift */,
+				CF7069432429102300CF8A48 /* Plane.swift */,
+				CF7069452429154000CF8A48 /* Scene.swift */,
+			);
+			path = engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,8 +193,11 @@
 				CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */,
 				CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */,
 				CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */,
+				CF70694224290E7400CF8A48 /* Node.swift in Sources */,
+				CF7069462429154000CF8A48 /* Scene.swift in Sources */,
 				CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */,
 				CF22DEEB242365330042F9B7 /* Shaders.metal in Sources */,
+				CF7069442429102300CF8A48 /* Plane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

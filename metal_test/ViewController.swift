@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         view.addSubview(metalView)
         renderer = Renderer(device: device!)
+        renderer.scene = GameScene(device: device!, size: view.bounds.size)
         metalView.device = device
         metalView.delegate = renderer
         metalView.clearColor = .init(red: 0, green: 0.5, blue: 0.5, alpha: 1)

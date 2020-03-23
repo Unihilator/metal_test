@@ -10,55 +10,20 @@ import MetalKit
 
 // Include header shared between this Metal shader code and C code executing Metal API commands.
 
-struct Triangles {
-    var vertices: [Float]
-    
-    var indicies: [UInt16] = [
-        0, 1, 2,
-        2, 3, 0
-    ]
-    
-    func createVBuffer(device: MTLDevice) -> MTLBuffer? {
-        return device.makeBuffer(
-            bytes: vertices,
-            length: vertices.count * MemoryLayout<Float>.size,
-            options: []
-        )
-    }
-    
-    func createIBuffer(device: MTLDevice) -> MTLBuffer? {
-        return device.makeBuffer(
-            bytes: indicies, length: indicies.count * MemoryLayout<UInt16>.size,
-            options: []
-        )
-    }
-}
 
 class Renderer: NSObject {
     private let device: MTLDevice
     let commandQueue: MTLCommandQueue
     
     var pipelineState: MTLRenderPipelineState?
-    var vertexBuffer: MTLBuffer?
-    var indexBuffer: MTLBuffer?
     
-    // to move
-    let triangles = Triangles(vertices: [
-        -1, 1, 0,
-        -1, -1, 0,
-        1, -1, 0,
-        1, 1, 0
-    ])
-    
-    var constant = Constants()
-    var time: Float = 0
+    var scene: Scene?
     
     init(device: MTLDevice) {
         self.device = device
         self.commandQueue = device.makeCommandQueue()!
         super.init()
-        self.vertexBuffer = triangles.createVBuffer(device: device)
-        self.indexBuffer = triangles.createIBuffer(device: device)
+        
         try? buildPipelineState()
     }
     
@@ -83,33 +48,19 @@ extension Renderer: MTKViewDelegate {
     
     public func draw(in view: MTKView) {
         guard let currentDrawable = view.currentDrawable,
-            let pipelineState = pipelineState,
-            let indexBuffer = indexBuffer,
-            let descriptor = view.currentRenderPassDescriptor else { return }
-        
-        time += 1 / Float(view.preferredFramesPerSecond)
-        
-        let animatedX = abs(sin(time)/2 + 0.5)
-        constant.xOffset = animatedX
+            let descriptor = view.currentRenderPassDescriptor,
+            let pipelineState = pipelineState else { return }
         
         let commandBuffer = commandQueue.makeCommandBuffer()!
+        let commandEncoder: MTLRenderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: descriptor)!
         
-        let commandEncoder: MTLRenderCommandEncoder? = commandBuffer.makeRenderCommandEncoder(descriptor: descriptor)
-        commandEncoder?.setRenderPipelineState(pipelineState)
+        commandEncoder.setRenderPipelineState(pipelineState)
         
-        commandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        commandEncoder?.setVertexBytes(&constant, length: MemoryLayout<Constants>.stride, index: 1)
+        let deltaTime = 1/Float(view.preferredFramesPerSecond)
         
-        commandEncoder?.drawIndexedPrimitives(
-            type: .triangle,
-            indexCount: triangles.indicies.count,
-            indexType: .uint16,
-            indexBuffer: indexBuffer,
-            indexBufferOffset: 0
-        )
+        scene?.render(commandEncoder: commandEncoder, deltaTime: deltaTime)
         
-        commandEncoder?.endEncoding()
-        
+        commandEncoder.endEncoding()
         commandBuffer.present(currentDrawable)
         commandBuffer.commit()
     }
