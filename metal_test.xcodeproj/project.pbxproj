@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0C2779242A6FFB0057A8F0 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C2778242A6FFB0057A8F0 /* Renderable.swift */; };
 		CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED6242355150042F9B7 /* AppDelegate.swift */; };
 		CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED8242355150042F9B7 /* SceneDelegate.swift */; };
 		CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEDA242355150042F9B7 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF0C2778242A6FFB0057A8F0 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		CF22DED3242355150042F9B7 /* metal_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metal_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF22DED6242355150042F9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF22DED8242355150042F9B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				CF70694124290E7400CF8A48 /* Node.swift */,
 				CF7069432429102300CF8A48 /* Plane.swift */,
 				CF7069452429154000CF8A48 /* Scene.swift */,
+				CF0C2778242A6FFB0057A8F0 /* Renderable.swift */,
 			);
 			path = engine;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */,
 				CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */,
 				CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */,
+				CF0C2779242A6FFB0057A8F0 /* Renderable.swift in Sources */,
 				CF70694224290E7400CF8A48 /* Node.swift in Sources */,
 				CF7069462429154000CF8A48 /* Scene.swift in Sources */,
 				CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */,

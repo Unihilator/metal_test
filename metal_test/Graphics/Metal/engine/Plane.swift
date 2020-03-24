@@ -2,6 +2,24 @@ import Foundation
 import MetalKit
 
 class Plane: Node {
+    // Renderable
+    var pipelineState: MTLRenderPipelineState!
+    var fragmentFunctionName: String = "fragment_shader"
+    var vertexFunctionName: String = "vertex_shader"
+    var vertexDescriptor: MTLVertexDescriptor {
+        let vertexDescriptor = MTLVertexDescriptor()
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].offset = 0
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        
+        vertexDescriptor.attributes[1].format = .float4
+        vertexDescriptor.attributes[1].offset = MemoryLayout<vector_float3>.stride
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        
+        vertexDescriptor.layouts[0].stride = MemoryLayout<Vertex>.stride
+        return vertexDescriptor
+    }
+    
     var vertexBuffer: MTLBuffer?
     var indexBuffer: MTLBuffer?
     
@@ -22,7 +40,8 @@ class Plane: Node {
     var constants = Constants()
     
     init(device: MTLDevice) { super.init()
-      buildBuffers(device: device)
+        buildBuffers(device: device)
+        pipelineState = buildPipelineState(device: device)
     }
     
     private func buildBuffers(device: MTLDevice) {
@@ -42,6 +61,7 @@ class Plane: Node {
         time += deltaTime
         let animateBy = abs(sin(time)/2 + 0.5)
         constants.xOffset = animateBy
+        commandEncoder.setRenderPipelineState(pipelineState)
         commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         commandEncoder.setVertexBytes(&constants, length: MemoryLayout<Constants>.stride, index: 1)
         commandEncoder.drawIndexedPrimitives(
@@ -50,3 +70,5 @@ class Plane: Node {
         )
     }
 }
+
+extension Plane: Renderable { }

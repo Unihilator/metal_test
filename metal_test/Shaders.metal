@@ -20,7 +20,7 @@ struct VertexOut {
 vertex VertexOut vertex_shader(const VertexIn vertexIn [[stage_in]]) {
     VertexOut vertexOut;
     vertexOut.position = vertexIn.position;
-    vertexOut.color = vertexIn.color;
+    vertexOut.color = (vertexIn.color.r + vertexIn.color.g + vertexIn.color.b) / 3;
     
     return vertexOut;
 }
