@@ -17,10 +17,20 @@ class Renderer: NSObject {
     
     var scene: Scene?
     
+    var samplerState: MTLSamplerState?
+    
     init(device: MTLDevice) {
         self.device = device
         self.commandQueue = device.makeCommandQueue()!
         super.init()
+        buildSamplerState()
+    }
+    
+    private func buildSamplerState() {
+        let descriptor = MTLSamplerDescriptor()
+        descriptor.minFilter = .linear
+        descriptor.magFilter = .linear
+        samplerState = device.makeSamplerState(descriptor: descriptor)
     }
 }
 
@@ -36,6 +46,8 @@ extension Renderer: MTKViewDelegate {
         let commandEncoder: MTLRenderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: descriptor)!
 
         let deltaTime = 1/Float(view.preferredFramesPerSecond)
+        
+        commandEncoder.setFragmentSamplerState(samplerState, index: 0)
         
         scene?.render(commandEncoder: commandEncoder, deltaTime: deltaTime)
         

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CF0C2779242A6FFB0057A8F0 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C2778242A6FFB0057A8F0 /* Renderable.swift */; };
+		CF0C277E242A7D5B0057A8F0 /* picture-frame-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0C277B242A7D5B0057A8F0 /* picture-frame-mask.png */; };
+		CF0C277F242A7D5B0057A8F0 /* picture-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0C277C242A7D5B0057A8F0 /* picture-frame.png */; };
+		CF0C2780242A7D5B0057A8F0 /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0C277D242A7D5B0057A8F0 /* picture.png */; };
+		CF0C2782242A82050057A8F0 /* Texturable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C2781242A82050057A8F0 /* Texturable.swift */; };
 		CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED6242355150042F9B7 /* AppDelegate.swift */; };
 		CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED8242355150042F9B7 /* SceneDelegate.swift */; };
 		CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEDA242355150042F9B7 /* ViewController.swift */; };
@@ -23,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		CF0C2778242A6FFB0057A8F0 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
+		CF0C277B242A7D5B0057A8F0 /* picture-frame-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picture-frame-mask.png"; sourceTree = "<group>"; };
+		CF0C277C242A7D5B0057A8F0 /* picture-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picture-frame.png"; sourceTree = "<group>"; };
+		CF0C277D242A7D5B0057A8F0 /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
+		CF0C2781242A82050057A8F0 /* Texturable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texturable.swift; sourceTree = "<group>"; };
 		CF22DED3242355150042F9B7 /* metal_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metal_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF22DED6242355150042F9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF22DED8242355150042F9B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF0C277A242A7D5B0057A8F0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CF0C277B242A7D5B0057A8F0 /* picture-frame-mask.png */,
+				CF0C277C242A7D5B0057A8F0 /* picture-frame.png */,
+				CF0C277D242A7D5B0057A8F0 /* picture.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		CF22DECA242355150042F9B7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +97,7 @@
 				CF22DEE1242355160042F9B7 /* LaunchScreen.storyboard */,
 				CF22DEE4242355160042F9B7 /* Info.plist */,
 				CF22DEEA242365330042F9B7 /* Shaders.metal */,
+				CF0C277A242A7D5B0057A8F0 /* Images */,
 			);
 			path = metal_test;
 			sourceTree = "<group>";
@@ -117,6 +136,7 @@
 				CF7069432429102300CF8A48 /* Plane.swift */,
 				CF7069452429154000CF8A48 /* Scene.swift */,
 				CF0C2778242A6FFB0057A8F0 /* Renderable.swift */,
+				CF0C2781242A82050057A8F0 /* Texturable.swift */,
 			);
 			path = engine;
 			sourceTree = "<group>";
@@ -181,7 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF22DEE3242355160042F9B7 /* LaunchScreen.storyboard in Resources */,
+				CF0C277F242A7D5B0057A8F0 /* picture-frame.png in Resources */,
+				CF0C2780242A7D5B0057A8F0 /* picture.png in Resources */,
 				CF22DEE0242355160042F9B7 /* Assets.xcassets in Resources */,
+				CF0C277E242A7D5B0057A8F0 /* picture-frame-mask.png in Resources */,
 				CF22DEDE242355150042F9B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +225,7 @@
 				CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */,
 				CF22DEEB242365330042F9B7 /* Shaders.metal in Sources */,
 				CF7069442429102300CF8A48 /* Plane.swift in Sources */,
+				CF0C2782242A82050057A8F0 /* Texturable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
