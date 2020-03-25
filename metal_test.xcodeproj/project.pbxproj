@@ -22,6 +22,7 @@
 		CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEEF242372FB0042F9B7 /* Renderer.swift */; };
 		CF483FDA242B6E98001565CA /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF483FD9242B6E98001565CA /* Metal.framework */; };
 		CF483FDC242B6EA2001565CA /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF483FDB242B6EA2001565CA /* MetalKit.framework */; };
+		CF483FDF242B8F6C001565CA /* MatrixMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF483FDE242B8F6C001565CA /* MatrixMath.swift */; };
 		CF70694224290E7400CF8A48 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF70694124290E7400CF8A48 /* Node.swift */; };
 		CF7069442429102300CF8A48 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7069432429102300CF8A48 /* Plane.swift */; };
 		CF7069462429154000CF8A48 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7069452429154000CF8A48 /* Scene.swift */; };
@@ -45,6 +46,7 @@
 		CF22DEEF242372FB0042F9B7 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CF483FD9242B6E98001565CA /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		CF483FDB242B6EA2001565CA /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		CF483FDE242B8F6C001565CA /* MatrixMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixMath.swift; sourceTree = "<group>"; };
 		CF6EACD22424B6D100D9E8B5 /* SharedTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedTypes.h; sourceTree = "<group>"; };
 		CF6EACD42424BAA200D9E8B5 /* metal_test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "metal_test-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF70694124290E7400CF8A48 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
@@ -153,9 +155,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF483FDD242B8F48001565CA /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				CF483FDE242B8F6C001565CA /* MatrixMath.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
 		CF70694024290E5E00CF8A48 /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				CF483FDD242B8F48001565CA /* Math */,
 				CF0C2783242B576F0057A8F0 /* Abstract */,
 				CF70694124290E7400CF8A48 /* Node.swift */,
 				CF7069432429102300CF8A48 /* Plane.swift */,
@@ -249,6 +260,7 @@
 				CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */,
 				CF22DEEB242365330042F9B7 /* Shaders.metal in Sources */,
 				CF7069442429102300CF8A48 /* Plane.swift in Sources */,
+				CF483FDF242B8F6C001565CA /* MatrixMath.swift in Sources */,
 				CF0C2782242A82050057A8F0 /* Texturable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
