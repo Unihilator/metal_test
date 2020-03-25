@@ -24,6 +24,8 @@ class Plane: Node {
         return vertexDescriptor
     }
     
+    var maskTexture: MTLTexture?
+    
     //Texturable
     var texture: MTLTexture?
     
@@ -60,6 +62,15 @@ class Plane: Node {
         pipelineState = buildPipelineState(device: device)
     }
     
+    init(device: MTLDevice, imageName: String, maskImageName: String) {
+        super.init()
+        self.texture = setTexture(device: device, imagerName: imageName)
+        self.maskTexture = setTexture(device: device, imagerName: maskImageName)
+        fragmentFunctionName = "textured_mask_fragment"
+        buildBuffers(device: device)
+        pipelineState = buildPipelineState(device: device)
+    }
+    
     private func buildBuffers(device: MTLDevice) {
         vertexBuffer = device.makeBuffer(
             bytes: vertices, length: vertices.count * MemoryLayout<Vertex>.stride, options: []
@@ -83,6 +94,7 @@ class Plane: Node {
         commandEncoder.setVertexBytes(&constants, length: MemoryLayout<Constants>.stride, index: 1)
         
         commandEncoder.setFragmentTexture(texture, index: 0)
+        commandEncoder.setFragmentTexture(maskTexture, index: 1)
         commandEncoder.drawIndexedPrimitives(
             type: .triangle, indexCount: indices.count,
             indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0

@@ -14,10 +14,7 @@ extension Texturable {
         
         let options = [MTKTextureLoader.Option.origin : MTKTextureLoader.Origin.bottomLeft]
         if let textureURL = Bundle.main.url(forResource: imagerName, withExtension: nil) {
-            do {
-                texture = try textureLoader.newTexture(URL: textureURL, options: options)
-            } catch {
-            }
+            texture = try? textureLoader.newTexture(URL: textureURL, options: options)
         }
         return texture
     }

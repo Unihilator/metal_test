@@ -36,5 +36,21 @@ fragment half4 textured_fragment(VertexOut vertexIn [[stage_in]],
                                  sampler sampler2d [[sampler(0)]],
                                  texture2d<float> texture [[ texture(0) ]] ) {
     float4 color = texture.sample(sampler2d, vertexIn.textureCoordinates);
+    if (color.a <= 0.01) {
+        discard_fragment();
+    }
+    return half4(color.r, color.g, color.b, 1);
+}
+
+fragment half4 textured_mask_fragment(VertexOut vertexIn [[ stage_in ]],
+                                      sampler sampler2d [[sampler(0)]],
+                                      texture2d<float> texture [[ texture(0)]],
+                                      texture2d<float> maskTexture [[ texture(1) ]]) {
+    float4 color = texture.sample(sampler2d, vertexIn.textureCoordinates);
+    float4 maskColor = maskTexture.sample(sampler2d, vertexIn.textureCoordinates);
+    float maskOpacity = maskColor.a;
+    if (maskOpacity < 0.5) {
+        discard_fragment();
+    }
     return half4(color.r, color.g, color.b, 1);
 }
