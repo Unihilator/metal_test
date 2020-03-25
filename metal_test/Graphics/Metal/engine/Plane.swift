@@ -46,7 +46,7 @@ class Plane: Node {
     
     var time: Float = 0
     
-    var constants = Constants()
+    var modelConstants = ModelConstants.identity()
     
     init(device: MTLDevice) {
         super.init()
@@ -87,11 +87,15 @@ class Plane: Node {
         
         time += deltaTime
         let animateBy = abs(sin(time)/2 + 0.5)
-        constants.xOffset = animateBy
+        
+        var modelMatrix = matrix_float4x4(scaleX: 0.5, y: 0.5, z: 0.5)
+        let rotationMatrix = matrix_float4x4(rotationAngle: animateBy, x: 0, y: 0, z: 1)
+        modelMatrix = matrix_multiply(rotationMatrix, modelMatrix)
+        modelConstants.modelViewMatrix = modelMatrix
         
         commandEncoder.setRenderPipelineState(pipelineState)
         commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        commandEncoder.setVertexBytes(&constants, length: MemoryLayout<Constants>.stride, index: 1)
+        commandEncoder.setVertexBytes(&modelConstants, length: MemoryLayout<ModelConstants>.stride, index: 1)
         
         commandEncoder.setFragmentTexture(texture, index: 0)
         commandEncoder.setFragmentTexture(maskTexture, index: 1)

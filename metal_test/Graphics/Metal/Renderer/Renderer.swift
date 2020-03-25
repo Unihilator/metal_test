@@ -56,3 +56,9 @@ extension Renderer: MTKViewDelegate {
         commandBuffer.commit()
     }
 }
+
+extension ModelConstants {
+    static func identity() -> ModelConstants {
+        return ModelConstants(modelViewMatrix: matrix_identity_float4x4)
+    }
+}

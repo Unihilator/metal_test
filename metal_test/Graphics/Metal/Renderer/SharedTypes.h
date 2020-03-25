@@ -18,11 +18,6 @@ typedef enum AAPLVertexInputIndex
     AAPLVertexInputIndexOffsetConstraint = 1,
 } AAPLVertexInputIndex;
 
-
-struct Constants {
-    float xOffset;
-};
-
 typedef struct
 {
     vector_float3 position;
@@ -30,5 +25,9 @@ typedef struct
     vector_float2 texture;
 } Vertex;
 
+typedef struct {
+    simd_float4x4 modelViewMatrix;
+} ModelConstants;
+// matrix_identity_float4x4
 
 #endif /* SharedTypes_h */
