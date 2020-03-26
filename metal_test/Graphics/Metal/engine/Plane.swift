@@ -88,10 +88,19 @@ class Plane: Node {
         time += deltaTime
         let animateBy = abs(sin(time)/2 + 0.5)
         
-        var modelMatrix = matrix_float4x4(scaleX: 0.5, y: 0.5, z: 0.5)
+        
         let rotationMatrix = matrix_float4x4(rotationAngle: animateBy, x: 0, y: 0, z: 1)
-        modelMatrix = matrix_multiply(rotationMatrix, modelMatrix)
-        modelConstants.modelViewMatrix = modelMatrix
+        let viewMatrix = matrix_float4x4(translationX: 0, y: 0, z: -4)
+        
+        let modelViewMatrix = matrix_multiply(rotationMatrix, viewMatrix)
+        
+        let aspect = Float(UIScreen.main.bounds.width/UIScreen.main.bounds.height)
+        let projectionMatrix = matrix_float4x4(projectionFov: radians(fromDegrees: 65),
+                                               aspect: aspect,
+                                               nearZ: 0.1,
+                                               farZ: 100)
+        
+        modelConstants.modelViewMatrix = matrix_multiply(projectionMatrix, modelViewMatrix)
         
         commandEncoder.setRenderPipelineState(pipelineState)
         commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
