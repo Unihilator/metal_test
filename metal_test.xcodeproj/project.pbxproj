@@ -170,16 +170,24 @@
 		CF70694024290E5E00CF8A48 /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				CFE2D7C8243A3CA800F50F11 /* Nodes */,
 				CF483FDD242B8F48001565CA /* Math */,
 				CF0C2783242B576F0057A8F0 /* Abstract */,
+				CF0C2781242A82050057A8F0 /* Texturable.swift */,
+			);
+			path = engine;
+			sourceTree = "<group>";
+		};
+		CFE2D7C8243A3CA800F50F11 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				CFE2D7C4243A313800F50F11 /* Primitive.swift */,
 				CF70694124290E7400CF8A48 /* Node.swift */,
 				CF7069432429102300CF8A48 /* Plane.swift */,
 				CF7069452429154000CF8A48 /* Scene.swift */,
-				CF0C2781242A82050057A8F0 /* Texturable.swift */,
-				CFE2D7C4243A313800F50F11 /* Primitive.swift */,
 				CFE2D7C6243A330700F50F11 /* Cube.swift */,
 			);
-			path = engine;
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
