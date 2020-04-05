@@ -20,9 +20,11 @@ struct VertexOut {
 };
 
 vertex VertexOut vertex_shader(const VertexIn vertexIn [[stage_in]],
-                               constant ModelConstants &modelConstants [[buffer(1)]]) {
+                               constant ModelConstants &modelConstants [[buffer(AAPLVertexInputIndexOffsetConstraint)]],
+                               constant SceneConstants &sceneConstants [[buffer(AAPLVertexInputSceneConstantsConstraint)]] ) {
     VertexOut vertexOut;
-    vertexOut.position = modelConstants.modelViewMatrix * vertexIn.position;
+    float4x4 matrix = sceneConstants.projectionMatrix * modelConstants.modelViewMatrix;
+    vertexOut.position = matrix * vertexIn.position;
     vertexOut.color = vertexIn.color;
     vertexOut.textureCoordinates = vertexIn.textureCoordinates;
     

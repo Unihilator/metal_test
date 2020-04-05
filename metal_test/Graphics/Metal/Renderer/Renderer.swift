@@ -72,3 +72,9 @@ extension ModelConstants {
         return ModelConstants(modelViewMatrix: matrix_identity_float4x4)
     }
 }
+
+extension SceneConstants {
+    static func identity() -> SceneConstants {
+        return SceneConstants(projectionMatrix: matrix_identity_float4x4)
+    }
+}

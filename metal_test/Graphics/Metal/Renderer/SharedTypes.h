@@ -16,6 +16,7 @@ typedef enum AAPLVertexInputIndex
 {
     AAPLVertexInputIndexVertices     = 0,
     AAPLVertexInputIndexOffsetConstraint = 1,
+    AAPLVertexInputSceneConstantsConstraint = 2,
 } AAPLVertexInputIndex;
 
 typedef struct
@@ -25,6 +26,10 @@ typedef struct
     vector_float2 texture;
 } Vertex;
 
+typedef struct {
+    simd_float4x4 projectionMatrix;
+} SceneConstants;
+// matrix_identity_float4x4
 typedef struct {
     simd_float4x4 modelViewMatrix;
 } ModelConstants;
