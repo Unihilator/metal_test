@@ -28,12 +28,13 @@ class GameScene: Scene {
         quad = Plane(device: device, imageName: "picture.png")
         super.init(device: device, size: size)
         add(childNode: quad)
-        quad.position.x = -1
-        quad.position.y = 1
+        quad.position.x = 0
+        quad.position.y = 0
+        
         let quad2 = Plane(device: device, imageName: "picture.png")
-        quad2.position.x = 1
-        quad2.position.y = -1
-        add(childNode: quad2)
+        quad2.scale = simd_float3(repeating: 0.5)
+        quad2.position.y = 1.5
+        quad.add(childNode: quad2)
     }
     
     override func update(deltaTime: Float) {
