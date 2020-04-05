@@ -27,6 +27,7 @@
 		CF7069442429102300CF8A48 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7069432429102300CF8A48 /* Plane.swift */; };
 		CF7069462429154000CF8A48 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7069452429154000CF8A48 /* Scene.swift */; };
 		CFE2D7C5243A313800F50F11 /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE2D7C4243A313800F50F11 /* Primitive.swift */; };
+		CFE2D7C7243A330700F50F11 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE2D7C6243A330700F50F11 /* Cube.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		CF7069432429102300CF8A48 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		CF7069452429154000CF8A48 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		CFE2D7C4243A313800F50F11 /* Primitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitive.swift; sourceTree = "<group>"; };
+		CFE2D7C6243A330700F50F11 /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				CF7069452429154000CF8A48 /* Scene.swift */,
 				CF0C2781242A82050057A8F0 /* Texturable.swift */,
 				CFE2D7C4243A313800F50F11 /* Primitive.swift */,
+				CFE2D7C6243A330700F50F11 /* Cube.swift */,
 			);
 			path = engine;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				CF70694224290E7400CF8A48 /* Node.swift in Sources */,
 				CF7069462429154000CF8A48 /* Scene.swift in Sources */,
 				CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */,
+				CFE2D7C7243A330700F50F11 /* Cube.swift in Sources */,
 				CFE2D7C5243A313800F50F11 /* Primitive.swift in Sources */,
 				CF22DEEB242365330042F9B7 /* Shaders.metal in Sources */,
 				CF7069442429102300CF8A48 /* Plane.swift in Sources */,
