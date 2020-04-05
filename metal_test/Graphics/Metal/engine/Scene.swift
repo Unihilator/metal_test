@@ -33,9 +33,8 @@ class GameScene: Scene {
         add(childNode: quad)
         quad.position.x = 0
         quad.position.y = 0
-        
+        quad.scale = SIMD3<Float>(repeating: 3)
         quad.position.z = -3
-        quad.position.y = -1.5
     }
     
     override func update(deltaTime: Float) {
