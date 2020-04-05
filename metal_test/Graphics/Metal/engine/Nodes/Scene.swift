@@ -40,6 +40,12 @@ class GameScene: Scene {
         quad.position.y = 0
         quad.scale = SIMD3<Float>(repeating: 3)
         quad.position.z = -3
+        
+        camera.position.y = -1
+        camera.position.x = 0
+        camera.position.z = -6
+        camera.rotation.x = radians(fromDegrees: -45)
+        camera.rotation.y = radians(fromDegrees: -45)
     }
     
     override func update(deltaTime: Float) {
