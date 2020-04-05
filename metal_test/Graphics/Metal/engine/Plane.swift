@@ -79,27 +79,14 @@ class Plane: Node {
             bytes: indices, length: indices.count * MemoryLayout<UInt16>.size, options: []
         )
     }
-    
-    override func render(commandEncoder: MTLRenderCommandEncoder, deltaTime: Float) {
-        super.render(commandEncoder: commandEncoder, deltaTime: deltaTime)
-        
+}
+
+extension Plane: Renderable, Texturable {
+    func doRender(commandEncoder: MTLRenderCommandEncoder, modelViewMatrix: matrix_float4x4) {
         guard let indexBuffer = indexBuffer else { return }
-        
-        time += deltaTime
-        let animateBy = abs(sin(time)/2 + 0.5)
-        
-        
-        let rotationMatrix = matrix_float4x4(rotationAngle: animateBy, x: 0, y: 0, z: 1)
-        let viewMatrix = matrix_float4x4(translationX: 0, y: 0, z: -4)
-        
-        let modelViewMatrix = matrix_multiply(rotationMatrix, viewMatrix)
-        
+                
         let aspect = Float(UIScreen.main.bounds.width/UIScreen.main.bounds.height)
-        let projectionMatrix = matrix_float4x4(projectionFov: radians(fromDegrees: 65),
-                                               aspect: aspect,
-                                               nearZ: 0.1,
-                                               farZ: 100)
-        
+        let projectionMatrix = matrix_float4x4(projectionFov: radians(fromDegrees: 65), aspect: aspect, nearZ: 0.1, farZ: 100)
         modelConstants.modelViewMatrix = matrix_multiply(projectionMatrix, modelViewMatrix)
         
         commandEncoder.setRenderPipelineState(pipelineState)
@@ -114,5 +101,3 @@ class Plane: Node {
         )
     }
 }
-
-extension Plane: Renderable, Texturable { }
