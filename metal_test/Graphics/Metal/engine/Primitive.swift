@@ -98,6 +98,9 @@ extension Primitive: Renderable, Texturable {
         
         commandEncoder.setFragmentTexture(texture, index: 0)
         commandEncoder.setFragmentTexture(maskTexture, index: 1)
+        
+        commandEncoder.setFrontFacing(.counterClockwise)
+        commandEncoder.setCullMode(.back)
         commandEncoder.drawIndexedPrimitives(
             type: .triangle, indexCount: indices.count,
             indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0
