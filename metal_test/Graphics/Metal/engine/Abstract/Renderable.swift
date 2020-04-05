@@ -21,7 +21,7 @@ extension Renderable {
         descriptor.fragmentFunction = fragmentFunc
         descriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
         descriptor.vertexDescriptor = vertexDescriptor
-        
+        descriptor.depthAttachmentPixelFormat = .depth32Float
         let pipelineState: MTLRenderPipelineState
         do {
             pipelineState = try device.makeRenderPipelineState(descriptor: descriptor)
