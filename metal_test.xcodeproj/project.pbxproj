@@ -12,6 +12,13 @@
 		CF0C277F242A7D5B0057A8F0 /* picture-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0C277C242A7D5B0057A8F0 /* picture-frame.png */; };
 		CF0C2780242A7D5B0057A8F0 /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0C277D242A7D5B0057A8F0 /* picture.png */; };
 		CF0C2782242A82050057A8F0 /* Texturable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C2781242A82050057A8F0 /* Texturable.swift */; };
+		CF19CB7524421843005CBE56 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19CB7424421843005CBE56 /* Model.swift */; };
+		CF19CB802442208C005CBE56 /* mushroom.png in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB782442208C005CBE56 /* mushroom.png */; };
+		CF19CB812442208C005CBE56 /* mushroom.obj in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB792442208C005CBE56 /* mushroom.obj */; };
+		CF19CB822442208C005CBE56 /* humanFigure.obj in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB7B2442208C005CBE56 /* humanFigure.obj */; };
+		CF19CB832442208C005CBE56 /* texturedCube.blend in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB7D2442208C005CBE56 /* texturedCube.blend */; };
+		CF19CB842442208C005CBE56 /* texturedCube.png in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB7E2442208C005CBE56 /* texturedCube.png */; };
+		CF19CB852442208C005CBE56 /* texturedCube.obj in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB7F2442208C005CBE56 /* texturedCube.obj */; };
 		CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED6242355150042F9B7 /* AppDelegate.swift */; };
 		CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED8242355150042F9B7 /* SceneDelegate.swift */; };
 		CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEDA242355150042F9B7 /* ViewController.swift */; };
@@ -37,6 +44,13 @@
 		CF0C277C242A7D5B0057A8F0 /* picture-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picture-frame.png"; sourceTree = "<group>"; };
 		CF0C277D242A7D5B0057A8F0 /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
 		CF0C2781242A82050057A8F0 /* Texturable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texturable.swift; sourceTree = "<group>"; };
+		CF19CB7424421843005CBE56 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CF19CB782442208C005CBE56 /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
+		CF19CB792442208C005CBE56 /* mushroom.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mushroom.obj; sourceTree = "<group>"; };
+		CF19CB7B2442208C005CBE56 /* humanFigure.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = humanFigure.obj; sourceTree = "<group>"; };
+		CF19CB7D2442208C005CBE56 /* texturedCube.blend */ = {isa = PBXFileReference; lastKnownFileType = file; path = texturedCube.blend; sourceTree = "<group>"; };
+		CF19CB7E2442208C005CBE56 /* texturedCube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texturedCube.png; sourceTree = "<group>"; };
+		CF19CB7F2442208C005CBE56 /* texturedCube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = texturedCube.obj; sourceTree = "<group>"; };
 		CF22DED3242355150042F9B7 /* metal_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metal_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF22DED6242355150042F9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF22DED8242355150042F9B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +105,43 @@
 			path = Abstract;
 			sourceTree = "<group>";
 		};
+		CF19CB762442208C005CBE56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF19CB772442208C005CBE56 /* mushroom */,
+				CF19CB7A2442208C005CBE56 /* humanFigure */,
+				CF19CB7C2442208C005CBE56 /* texturedCube */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF19CB772442208C005CBE56 /* mushroom */ = {
+			isa = PBXGroup;
+			children = (
+				CF19CB782442208C005CBE56 /* mushroom.png */,
+				CF19CB792442208C005CBE56 /* mushroom.obj */,
+			);
+			path = mushroom;
+			sourceTree = "<group>";
+		};
+		CF19CB7A2442208C005CBE56 /* humanFigure */ = {
+			isa = PBXGroup;
+			children = (
+				CF19CB7B2442208C005CBE56 /* humanFigure.obj */,
+			);
+			path = humanFigure;
+			sourceTree = "<group>";
+		};
+		CF19CB7C2442208C005CBE56 /* texturedCube */ = {
+			isa = PBXGroup;
+			children = (
+				CF19CB7D2442208C005CBE56 /* texturedCube.blend */,
+				CF19CB7E2442208C005CBE56 /* texturedCube.png */,
+				CF19CB7F2442208C005CBE56 /* texturedCube.obj */,
+			);
+			path = texturedCube;
+			sourceTree = "<group>";
+		};
 		CF22DECA242355150042F9B7 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				CF22DEED242372210042F9B7 /* Metal */,
+				CF19CB762442208C005CBE56 /* Models */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -189,6 +241,7 @@
 				CF7069452429154000CF8A48 /* Scene.swift */,
 				CFE2D7C6243A330700F50F11 /* Cube.swift */,
 				CFE2D7C9243A3D5B00F50F11 /* Camera.swift */,
+				CF19CB7424421843005CBE56 /* Model.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -254,10 +307,16 @@
 			files = (
 				CF22DEE3242355160042F9B7 /* LaunchScreen.storyboard in Resources */,
 				CF0C277F242A7D5B0057A8F0 /* picture-frame.png in Resources */,
+				CF19CB802442208C005CBE56 /* mushroom.png in Resources */,
 				CF0C2780242A7D5B0057A8F0 /* picture.png in Resources */,
 				CF22DEE0242355160042F9B7 /* Assets.xcassets in Resources */,
+				CF19CB822442208C005CBE56 /* humanFigure.obj in Resources */,
 				CF0C277E242A7D5B0057A8F0 /* picture-frame-mask.png in Resources */,
+				CF19CB842442208C005CBE56 /* texturedCube.png in Resources */,
+				CF19CB832442208C005CBE56 /* texturedCube.blend in Resources */,
+				CF19CB852442208C005CBE56 /* texturedCube.obj in Resources */,
 				CF22DEDE242355150042F9B7 /* Main.storyboard in Resources */,
+				CF19CB812442208C005CBE56 /* mushroom.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF19CB7524421843005CBE56 /* Model.swift in Sources */,
 				CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */,
 				CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */,
 				CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */,

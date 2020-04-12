@@ -27,28 +27,15 @@ class Scene: Node {
 }
 
 class GameScene: Scene {
-    var quad: Plane
-    var cube: Cube
-    
+    let mushroom: Model
     override init(device: MTLDevice, size: CGSize) {
-        cube = Cube(device: device)
-        quad = Plane(device: device, imageName: "picture.png")
+        mushroom = Model(device: device, modelName: "mushroom")
         super.init(device: device, size: size)
-        add(childNode: cube)
-        add(childNode: quad)
-        quad.position.x = 0
-        quad.position.y = 0
-        quad.scale = SIMD3<Float>(repeating: 3)
-        quad.position.z = -3
-        
-        camera.position.y = -1
-        camera.position.x = 0
+        add(childNode: mushroom)
         camera.position.z = -6
-        camera.rotation.x = radians(fromDegrees: -45)
-        camera.rotation.y = radians(fromDegrees: -45)
     }
     
     override func update(deltaTime: Float) {
-        cube.rotation.y += deltaTime
+        mushroom.rotation.y += deltaTime
     }
 }
