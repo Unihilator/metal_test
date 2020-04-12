@@ -64,7 +64,7 @@ class Model: Node {
         descriptor.attributes[1] = color
         
         let coordinates = descriptor.attributes[2] as! MDLVertexAttribute
-        color.name = MDLVertexAttributeTextureCoordinate
+        coordinates.name = MDLVertexAttributeTextureCoordinate
         descriptor.attributes[2] = coordinates
         
         let normals = descriptor.attributes[3] as! MDLVertexAttribute
