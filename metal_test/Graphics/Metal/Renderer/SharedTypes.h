@@ -32,6 +32,7 @@ typedef struct {
 // matrix_identity_float4x4
 typedef struct {
     simd_float4x4 modelViewMatrix;
+    simd_float4 materialColor;
 } ModelConstants;
 // matrix_identity_float4x4
 

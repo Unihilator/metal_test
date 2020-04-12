@@ -16,6 +16,8 @@ class MyMetalView: MTKView {
 class ViewController: UIViewController {
     lazy var metalView = MyMetalView(frame: self.view.bounds)
     lazy var device = MTLCreateSystemDefaultDevice()
+        
+    static let skyBlue = MTLClearColor(red: 0.66, green: 0.9, blue: 0.96, alpha: 1.0)
     
     var renderer: Renderer!
     
@@ -24,10 +26,10 @@ class ViewController: UIViewController {
         
         view.addSubview(metalView)
         renderer = Renderer(device: device!)
-        renderer.scene = GameScene(device: device!, size: view.bounds.size)
+        renderer.scene = LandscapeScene(device: device!, size: view.bounds.size)
         metalView.device = device
         metalView.delegate = renderer
-        metalView.clearColor = .init(red: 0, green: 0.5, blue: 0.5, alpha: 1)
+        metalView.clearColor = ViewController.skyBlue
         metalView.depthStencilPixelFormat = .depth32Float
     }
 }

@@ -8,7 +8,7 @@ class Node {
     var position = simd_float3(repeating: 0)
     var rotation = simd_float3(repeating: 0)
     var scale = simd_float3(repeating: 1)
-    
+    var materialColor = simd_float4(1)
     var modelMatrix: matrix_float4x4 {
         var matrix = matrix_float4x4(translationX: position.x, y: position.y, z: position.z)
         matrix = matrix.rotatedBy(rotationAngle: rotation.x, x: 1, y: 0, z: 0)

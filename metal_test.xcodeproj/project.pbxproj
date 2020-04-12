@@ -19,6 +19,8 @@
 		CF19CB832442208C005CBE56 /* texturedCube.blend in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB7D2442208C005CBE56 /* texturedCube.blend */; };
 		CF19CB842442208C005CBE56 /* texturedCube.png in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB7E2442208C005CBE56 /* texturedCube.png */; };
 		CF19CB852442208C005CBE56 /* texturedCube.obj in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB7F2442208C005CBE56 /* texturedCube.obj */; };
+		CF19CB8A24438A80005CBE56 /* LandscapeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19CB8924438A80005CBE56 /* LandscapeScene.swift */; };
+		CF19CB8D24438D02005CBE56 /* sun.obj in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB8C24438D02005CBE56 /* sun.obj */; };
 		CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED6242355150042F9B7 /* AppDelegate.swift */; };
 		CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED8242355150042F9B7 /* SceneDelegate.swift */; };
 		CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEDA242355150042F9B7 /* ViewController.swift */; };
@@ -51,6 +53,8 @@
 		CF19CB7D2442208C005CBE56 /* texturedCube.blend */ = {isa = PBXFileReference; lastKnownFileType = file; path = texturedCube.blend; sourceTree = "<group>"; };
 		CF19CB7E2442208C005CBE56 /* texturedCube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texturedCube.png; sourceTree = "<group>"; };
 		CF19CB7F2442208C005CBE56 /* texturedCube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = texturedCube.obj; sourceTree = "<group>"; };
+		CF19CB8924438A80005CBE56 /* LandscapeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeScene.swift; sourceTree = "<group>"; };
+		CF19CB8C24438D02005CBE56 /* sun.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sun.obj; sourceTree = "<group>"; };
 		CF22DED3242355150042F9B7 /* metal_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metal_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF22DED6242355150042F9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF22DED8242355150042F9B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,23 @@
 			path = texturedCube;
 			sourceTree = "<group>";
 		};
+		CF19CB8824438A6D005CBE56 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CF7069452429154000CF8A48 /* Scene.swift */,
+				CF19CB8924438A80005CBE56 /* LandscapeScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CF19CB8B24438D02005CBE56 /* Sun Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF19CB8C24438D02005CBE56 /* sun.obj */,
+			);
+			path = "Sun Model";
+			sourceTree = "<group>";
+		};
 		CF22DECA242355150042F9B7 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +218,7 @@
 		CF22DEEE2423722A0042F9B7 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				CF19CB8B24438D02005CBE56 /* Sun Model */,
 				CF22DEEF242372FB0042F9B7 /* Renderer.swift */,
 				CF6EACD22424B6D100D9E8B5 /* SharedTypes.h */,
 				CF6EACD42424BAA200D9E8B5 /* metal_test-Bridging-Header.h */,
@@ -235,10 +257,10 @@
 		CFE2D7C8243A3CA800F50F11 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				CF19CB8824438A6D005CBE56 /* Scenes */,
 				CFE2D7C4243A313800F50F11 /* Primitive.swift */,
 				CF70694124290E7400CF8A48 /* Node.swift */,
 				CF7069432429102300CF8A48 /* Plane.swift */,
-				CF7069452429154000CF8A48 /* Scene.swift */,
 				CFE2D7C6243A330700F50F11 /* Cube.swift */,
 				CFE2D7C9243A3D5B00F50F11 /* Camera.swift */,
 				CF19CB7424421843005CBE56 /* Model.swift */,
@@ -314,6 +336,7 @@
 				CF0C277E242A7D5B0057A8F0 /* picture-frame-mask.png in Resources */,
 				CF19CB842442208C005CBE56 /* texturedCube.png in Resources */,
 				CF19CB832442208C005CBE56 /* texturedCube.blend in Resources */,
+				CF19CB8D24438D02005CBE56 /* sun.obj in Resources */,
 				CF19CB852442208C005CBE56 /* texturedCube.obj in Resources */,
 				CF22DEDE242355150042F9B7 /* Main.storyboard in Resources */,
 				CF19CB812442208C005CBE56 /* mushroom.obj in Resources */,
@@ -335,6 +358,7 @@
 				CF70694224290E7400CF8A48 /* Node.swift in Sources */,
 				CF7069462429154000CF8A48 /* Scene.swift in Sources */,
 				CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */,
+				CF19CB8A24438A80005CBE56 /* LandscapeScene.swift in Sources */,
 				CFE2D7C7243A330700F50F11 /* Cube.swift in Sources */,
 				CFE2D7C5243A313800F50F11 /* Primitive.swift in Sources */,
 				CF22DEEB242365330042F9B7 /* Shaders.metal in Sources */,

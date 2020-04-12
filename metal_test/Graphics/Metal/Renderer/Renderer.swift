@@ -69,7 +69,7 @@ extension Renderer: MTKViewDelegate {
 
 extension ModelConstants {
     static func identity() -> ModelConstants {
-        return ModelConstants(modelViewMatrix: matrix_identity_float4x4)
+        return ModelConstants(modelViewMatrix: matrix_identity_float4x4, materialColor: simd_float4(repeating: 1))
     }
 }
 
