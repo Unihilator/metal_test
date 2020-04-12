@@ -21,6 +21,9 @@
 		CF19CB852442208C005CBE56 /* texturedCube.obj in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB7F2442208C005CBE56 /* texturedCube.obj */; };
 		CF19CB8A24438A80005CBE56 /* LandscapeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19CB8924438A80005CBE56 /* LandscapeScene.swift */; };
 		CF19CB8D24438D02005CBE56 /* sun.obj in Resources */ = {isa = PBXBuildFile; fileRef = CF19CB8C24438D02005CBE56 /* sun.obj */; };
+		CF19CB8F2443925C005CBE56 /* CrowdScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19CB8E2443925C005CBE56 /* CrowdScene.swift */; };
+		CF19CB9124439265005CBE56 /* InstanceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19CB9024439265005CBE56 /* InstanceScene.swift */; };
+		CF19CB93244392B7005CBE56 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19CB92244392B7005CBE56 /* Instance.swift */; };
 		CF22DED7242355150042F9B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED6242355150042F9B7 /* AppDelegate.swift */; };
 		CF22DED9242355150042F9B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DED8242355150042F9B7 /* SceneDelegate.swift */; };
 		CF22DEDB242355150042F9B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22DEDA242355150042F9B7 /* ViewController.swift */; };
@@ -55,6 +58,9 @@
 		CF19CB7F2442208C005CBE56 /* texturedCube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = texturedCube.obj; sourceTree = "<group>"; };
 		CF19CB8924438A80005CBE56 /* LandscapeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeScene.swift; sourceTree = "<group>"; };
 		CF19CB8C24438D02005CBE56 /* sun.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sun.obj; sourceTree = "<group>"; };
+		CF19CB8E2443925C005CBE56 /* CrowdScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrowdScene.swift; sourceTree = "<group>"; };
+		CF19CB9024439265005CBE56 /* InstanceScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceScene.swift; sourceTree = "<group>"; };
+		CF19CB92244392B7005CBE56 /* Instance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
 		CF22DED3242355150042F9B7 /* metal_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metal_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF22DED6242355150042F9B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF22DED8242355150042F9B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 			children = (
 				CF7069452429154000CF8A48 /* Scene.swift */,
 				CF19CB8924438A80005CBE56 /* LandscapeScene.swift */,
+				CF19CB8E2443925C005CBE56 /* CrowdScene.swift */,
+				CF19CB9024439265005CBE56 /* InstanceScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 				CFE2D7C6243A330700F50F11 /* Cube.swift */,
 				CFE2D7C9243A3D5B00F50F11 /* Camera.swift */,
 				CF19CB7424421843005CBE56 /* Model.swift */,
+				CF19CB92244392B7005CBE56 /* Instance.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -358,6 +367,9 @@
 				CF70694224290E7400CF8A48 /* Node.swift in Sources */,
 				CF7069462429154000CF8A48 /* Scene.swift in Sources */,
 				CF22DEF0242372FB0042F9B7 /* Renderer.swift in Sources */,
+				CF19CB8F2443925C005CBE56 /* CrowdScene.swift in Sources */,
+				CF19CB93244392B7005CBE56 /* Instance.swift in Sources */,
+				CF19CB9124439265005CBE56 /* InstanceScene.swift in Sources */,
 				CF19CB8A24438A80005CBE56 /* LandscapeScene.swift in Sources */,
 				CFE2D7C7243A330700F50F11 /* Cube.swift in Sources */,
 				CFE2D7C5243A313800F50F11 /* Primitive.swift in Sources */,

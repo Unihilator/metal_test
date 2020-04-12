@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
         view.addSubview(metalView)
         renderer = Renderer(device: device!)
-        renderer.scene = LandscapeScene(device: device!, size: view.bounds.size)
+        renderer.scene = InstanceScene(device: device!, size: view.bounds.size)
         metalView.device = device
         metalView.delegate = renderer
         metalView.clearColor = ViewController.skyBlue
